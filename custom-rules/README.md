@@ -30,11 +30,11 @@
 
     2.1 [Отключение проверки цепочки сертификатов](./Security%20misconfiguration/Disabling%20certificate%20chain%20validation.pmrls.json)
 
-   Универсальное правило для всех языков и типов конфигурационных файлов.
-   Отключение проверки цепочки сертификатов при установлении HTTPS-соединения помогает злоумышленникам вклиниться в канал связи и управлять данными либо читать их.
-   Параметр `SSL Verify` не должен иметь значение `false`. См. [OWASP TOP 10:A5](https://owasp.org/Top10/A05_2021-Security_Misconfiguration).
+    Универсальное правило для всех языков и типов конфигурационных файлов.
+    Отключение проверки цепочки сертификатов при установлении HTTPS-соединения помогает злоумышленникам вклиниться в канал связи и управлять данными либо читать их.
+    Параметр `SSL Verify` не должен иметь значение `false`. См. [OWASP TOP 10:A5](https://owasp.org/Top10/A05_2021-Security_Misconfiguration).
 
-   Python:
+    Python:
     ```python
     # Disable SSL verify
     session = Session()
@@ -42,7 +42,7 @@
     # -----------
     # Clone repo (example № 2)
     clone_command = ["git", "-c", "http.sslVerify=false", "clone"]
-   ```
+    ```
     2.2 [Отключение проверки цепочки сертификатов 2](./Security%20misconfiguration/Disabling%20certificate%20chain%20validation.pmrls2.json)
 
     Универсальное правило для всех языков и типов конфигурационных файлов.
@@ -53,7 +53,7 @@
     ```bash
     # Disable SSL verify
     ProjectName.deploy.cmd /t /m:DestinationServerName /u:User /p:Password /a:basic -AllowUntrusted=True
-   ```
+    ```
     Install npm package:
     ```bash
     # Disable SSL verify
