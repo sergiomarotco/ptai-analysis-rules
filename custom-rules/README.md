@@ -49,14 +49,10 @@
    Отключение проверки цепочки сертификатов при установлении HTTPS-соединения помогает злоумышленникам вклиниться в канал связи и управлять данными либо читать их.
    Параметр `SSL Verify` не должен иметь значение `false`. См. [OWASP TOP 10:A5](https://owasp.org/Top10/A05_2021-Security_Misconfiguration).
 
-   Python:
-    ```python
+   Run MSDeploy:
+    ```bash
     # Disable SSL verify
-    session = Session()
-    session.verify = False
-    # -----------
-    # Clone repo (example № 2)
-    clone_command = ["git", "-c", "http.sslVerify=false", "clone"]
+    ProjectName.deploy.cmd /t /m:DestinationServerName /u:User /p:Password /a:basic -AllowUntrusted=True
    ```
 3. [NPM. Применение отозванных зависимостей (отзыв по соображениям безопасности) (package-lock.json)](./Vulnerable%20and%20Outdated%20Components/NPM%20deprecated%20packages.pmrls.json)
 
