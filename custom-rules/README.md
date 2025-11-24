@@ -43,7 +43,7 @@
     # Clone repo (example № 2)
     clone_command = ["git", "-c", "http.sslVerify=false", "clone"]
    ```
-   2.2 [Отключение проверки цепочки сертификатов](./Security%20misconfiguration/Disabling%20certificate%20chain%20validation.pmrls.json)
+   2.2 [Отключение проверки цепочки сертификатов 2](./Security%20misconfiguration/Disabling%20certificate%20chain%20validation.pmrls2.json)
 
    Универсальное правило для всех языков и типов конфигурационных файлов.
    Отключение проверки цепочки сертификатов при установлении HTTPS-соединения помогает злоумышленникам вклиниться в канал связи и управлять данными либо читать их.
