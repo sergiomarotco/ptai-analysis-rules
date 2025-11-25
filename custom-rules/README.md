@@ -26,13 +26,15 @@
         }
     } 
    ```
-2. [Отключение проверки цепочки сертификатов](./Security%20misconfiguration/Disabling%20certificate%20chain%20validation.pmrls.json)
+2. Отключение цепочки сертификатов
 
-   Универсальное правило для всех языков и типов конфигурационных файлов.
-   Отключение проверки цепочки сертификатов при установлении HTTPS-соединения помогает злоумышленникам вклиниться в канал связи и управлять данными либо читать их.
-   Параметр `SSL Verify` не должен иметь значение `false`. См. [OWASP TOP 10:A5](https://owasp.org/Top10/A05_2021-Security_Misconfiguration).
+    2.1 [Отключение проверки цепочки сертификатов](./Security%20misconfiguration/Disabling%20certificate%20chain%20validation.pmrls.json)
 
-   Python:
+    Универсальное правило для всех языков и типов конфигурационных файлов.
+    Отключение проверки цепочки сертификатов при установлении HTTPS-соединения помогает злоумышленникам вклиниться в канал связи и управлять данными либо читать их.
+    Параметр `SSL Verify` не должен иметь значение `false`. См. [OWASP TOP 10:A5](https://owasp.org/Top10/A05_2021-Security_Misconfiguration).
+
+    Python:
     ```python
     # Disable SSL verify
     session = Session()
@@ -40,7 +42,24 @@
     # -----------
     # Clone repo (example № 2)
     clone_command = ["git", "-c", "http.sslVerify=false", "clone"]
-   ```
+    ```
+    2.2 [Отключение проверки цепочки сертификатов 2](./Security%20misconfiguration/Disabling%20certificate%20chain%20validation.pmrls2.json)
+
+    Универсальное правило для всех языков и типов конфигурационных файлов.
+    Отключение проверки цепочки сертификатов при установлении HTTPS-соединения помогает злоумышленникам вклиниться в канал связи и управлять данными либо читать их.
+    Параметр `SSL Verify` не должен иметь значение `false`. См. [OWASP TOP 10:A5](https://owasp.org/Top10/A05_2021-Security_Misconfiguration).
+
+    Run MSDeploy:
+    ```bash
+    # Disable SSL verify
+    ProjectName.deploy.cmd /t /m:DestinationServerName /u:User /p:Password /a:basic -AllowUntrusted=True
+    ```
+    Install npm package:
+    ```bash
+    # Disable SSL verify
+    npm install package-name --strict-ssl=false
+    ```
+   
 3. [NPM. Применение отозванных зависимостей (отзыв по соображениям безопасности) (package-lock.json)](./Vulnerable%20and%20Outdated%20Components/NPM%20deprecated%20packages.pmrls.json)
 
     Разработчик отозвал зависимость. Это может быть по разным причинам, например, разработчик более не развивает проект из-за отсутствия заинтересованности либо в новых версиях фреймворка/языка функционал используемой зависимости полностью или частично уже реализован, либо зависимость содержит уязвимость, которая устранена в следующих версиях.
